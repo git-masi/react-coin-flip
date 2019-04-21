@@ -5,7 +5,7 @@ import tails from '../assets/images/one-hundred-yen-coin-tails-removebg.png';
 
 const Coin = props => {
   return (
-    <div className="Coin">
+    <div className={`Coin ${props.flipping ? "flip-in-ver-right" : null}`}>
       <img src={props.face === 'heads' ? heads : tails} alt="Japanese 100 yen coin"/>
     </div>
   )

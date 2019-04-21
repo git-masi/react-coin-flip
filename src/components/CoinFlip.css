@@ -1,0 +1,29 @@
+.CoinFlip {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.CoinFlip > * {
+  margin: 1.4rem 0;
+}
+
+.CoinFlip button,
+.CoinFlip button:focus {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  outline:0;
+
+  background: steelblue;
+  border-radius: .8rem;
+  border: .1rem solid transparent;
+  color: white;
+}
+
+.CoinFlip button:hover {
+  background: inherit;
+  color: steelblue;
+  border: .1rem solid steelblue;
+}
