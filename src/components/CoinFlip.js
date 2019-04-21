@@ -38,8 +38,11 @@ class CoinFlip extends Component {
       return ({
         face: headsOrTails === 0 ? 'heads' : 'tails',
         totalFlips: curState.totalFlips + 1,
-        totalHeads: headsOrTails === 0 ? curState.totalHeads + 1 : curState.totalHeads, 
-        totalTails: headsOrTails === 1 ? curState.totalTails + 1 : curState.totalTails
+        // totalHeads: headsOrTails === 0 ? curState.totalHeads + 1 : curState.totalHeads, 
+        // totalTails: headsOrTails === 1 ? curState.totalTails + 1 : curState.totalTails
+        // refactor
+        totalHeads: curState.totalHeads += (headsOrTails === 0 ? 1 : 0),
+        totalTails: curState.totalTails += (headsOrTails === 1 ? 1 : 0)
       })
     }, this.flipping())
   };
