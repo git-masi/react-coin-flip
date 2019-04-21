@@ -49,7 +49,7 @@ class CoinFlip extends Component {
       <div className="CoinFlip">
         <h1>Heads or Tails?</h1>
         <Coin flipping={this.state.flipping} face={this.state.face}/>
-        <p>Out of {this.state.totalFlips} flips you've got {this.state.totalHeads} heads and {this.state.totalTails} tails</p>
+        <p>Out of {this.state.totalFlips} flips you've gotten {this.state.totalHeads} heads and {this.state.totalTails} tails</p>
         <button onClick={this.flipCoinHandler} disabled={this.state.flipping}>Flip Coin!</button>
       </div>
     )
