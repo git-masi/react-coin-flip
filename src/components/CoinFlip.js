@@ -10,7 +10,10 @@ class CoinFlip extends Component {
   constructor() {
     super()
     this.state = {
-      face: 'heads'
+      face: 'heads',
+      totalFlips: 0,
+      totalHeads: 0,
+      totalTails: 0
     }
     this.flipCoinHandler = this.flipCoinHandler.bind(this);
   }
@@ -20,9 +23,17 @@ class CoinFlip extends Component {
   };
 
   flipCoinHandler = function() {
-    this.setState((prevState) => { 
-      return this.randomize() === 1 ? {face: 'tails'} : {face: 'heads'};
-    });
+    // heads === 0, tails === 1
+    const headsOrTails = this.randomize();
+    
+    this.setState(curState => { 
+      return ({
+        face: headsOrTails === 0 ? 'heads' : 'tails',
+        totalFlips: curState.totalFlips + 1,
+        totalHeads: headsOrTails === 0 ? curState.totalHeads + 1 : curState.totalHeads, 
+        totalTails: headsOrTails === 1 ? curState.totalTails + 1 : curState.totalTails
+      })
+    })
   };
 
   render() {
