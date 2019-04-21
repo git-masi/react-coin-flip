@@ -15,9 +15,13 @@ class CoinFlip extends Component {
     this.flipCoinHandler = this.flipCoinHandler.bind(this);
   }
 
+  randomize = function() {
+    return Math.floor(Math.random() * 2);
+  };
+
   flipCoinHandler = function() {
     this.setState((prevState) => { 
-      return prevState.face === 'heads' ? {face: 'tails'} : {face: 'heads'};
+      return this.randomize() === 1 ? {face: 'tails'} : {face: 'heads'};
     });
   };
 
