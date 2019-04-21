@@ -12,12 +12,21 @@ class CoinFlip extends Component {
     this.state = {
       face: 'heads'
     }
+    this.flipCoinHandler = this.flipCoinHandler.bind(this);
   }
+
+  flipCoinHandler = function() {
+    this.setState((prevState) => { 
+      return prevState.face === 'heads' ? {face: 'tails'} : {face: 'heads'};
+    });
+  };
 
   render() {
     return (
       <div>
+        <h1>Heads or Tails?</h1>
         <Coin face={this.state.face}/>
+        <button onClick={this.flipCoinHandler}>Flip Coin!</button>
       </div>
     )
   }
