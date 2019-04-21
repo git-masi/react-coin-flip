@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Coin from './components/Coin';
+import CoinFlip from './components/CoinFlip';
 
 class App extends Component {
   render() {
     return (
-      <Coin/>
+      <CoinFlip/>
     );
   }
 }
