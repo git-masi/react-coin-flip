@@ -1,0 +1,10 @@
+.Coin {
+  height: 20rem;
+  width: 20rem;
+}
+
+.Coin img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
